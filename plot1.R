@@ -17,7 +17,7 @@
 #  Before executing the script, download the zip file from
 #  https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
 #  and unzip it on the folder where this script is saved.
-data = read.table('household_power_consumption.txt', header=TRUE, sep=';')
+data = read.table('household_power_consumption.txt', header=TRUE, sep=';', na.strings="?")
 
 # Merging Date and Time variables
 data$DT <- paste(data$Date, data$Time, sep=' ')
@@ -28,4 +28,4 @@ data$DT <- strptime(data$DT, format='%d/%m/%Y %H:%M:%S')
 # Filtering the required 2 days that will be analysed
 filtered_data <- data[data$DT >= '2007-02-01' & data$DT < '2007-02-03', ]
 
-
+#hist(as.numeric(filtered_data$Global_active_power), col='red')
