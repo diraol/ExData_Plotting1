@@ -39,7 +39,7 @@ plot(filtered_data$DT, filtered_data$Sub_metering_1, type="l",xlab="",ylab="Ener
 lines(filtered_data$DT, filtered_data$Sub_metering_2, col='red', type="l",xlab="",ylab="")
 lines(filtered_data$DT, filtered_data$Sub_metering_3, col='blue', type="l",xlab="",ylab="")
 legend('topright', c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
-        lty=1, col=c('black', 'red', 'blue'), bty='o', cex=.75)
+        lty=1, col=c('black', 'red', 'blue'), cex=.75)
 
 #Closing de the PNG device
 dev.off()
