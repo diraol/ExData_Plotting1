@@ -30,20 +30,24 @@ data$DT <- strptime(data$DT, format='%d/%m/%Y %H:%M:%S')
 
 # Filtering the required 2 days that will be analysed
 filtered_data <- data[data$DT >= '2007-02-01' & data$DT < '2007-02-03', ]
+# Creating weekdays data
 filtered_data$dia_da_semana <- weekdays(filtered_data$DT)
 
-
-#Opening PNG device; create 'plot1.png' in my working directory
+#Opening PNG device; create 'plot4.png' in my working directory
 png(file = "plot4.png")
-par(mfrow=c(2,2)) # all plots on one page
+# Defining a 2x2 grid for plots on one page
+par(mfrow=c(2,2))
 # Plot 1
 plot(filtered_data$DT, filtered_data$Global_active_power, type="l", xlab="", ylab="Global Active Power")
 # Plot 2
 plot(filtered_data$DT, filtered_data$Voltage, type="l", xlab="datetime", ylab="Voltage")
-# Plot 3
+# Plot 3 - Base graph
 plot(filtered_data$DT, filtered_data$Sub_metering_1, type="l",xlab="",ylab="Energy sub metering")
+# Adding one line to the plot3
 lines(filtered_data$DT, filtered_data$Sub_metering_2, col='red', type="l",xlab="",ylab="")
+# Adding one more line to the plot3
 lines(filtered_data$DT, filtered_data$Sub_metering_3, col='blue', type="l",xlab="",ylab="")
+# Adding legend plot3
 legend('topright', c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
         lty=1, col=c('black', 'red', 'blue'), bty='n', cex=.75)
 
