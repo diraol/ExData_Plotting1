@@ -11,7 +11,10 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with Radar Parlamentar.  If not, see <http://www.gnu.org/licenses/>.
+# along with this code.  If not, see <http://www.gnu.org/licenses/>.
+
+# Setting local language to english instead of portguese:
+Sys.setlocale("LC_TIME","C")
 
 # Reading data
 #  Before executing the script, download the zip file from
