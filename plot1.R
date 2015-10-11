@@ -25,3 +25,7 @@ data$DT <- paste(data$Date, data$Time, sep=' ')
 # Converting the DT string into a Date/Time field
 data$DT <- strptime(data$DT, format='%d/%m/%Y %H:%M:%S')
 
+# Filtering the required 2 days that will be analysed
+filtered_data <- data[data$DT >= '2007-02-01' & data$DT < '2007-02-03', ]
+
+
