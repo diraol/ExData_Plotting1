@@ -35,6 +35,6 @@ filtered_data$dia_da_semana <- weekdays(filtered_data$DT)
 #Opening PNG device; create 'plot1.png' in my working directory
 png(file = "plot2.png")
 #Drawing the Histogram
-with(filtered_data, plot(DT, Global_active_power, type="l",xlab="Global Active Power (kilowats)",ylab=""))
+with(filtered_data, plot(DT, Global_active_power, type="l",xlab="",ylab="Global Active Power (kilowats)"))
 #Closing de the PNG device
 dev.off()
